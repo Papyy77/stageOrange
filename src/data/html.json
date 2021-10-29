@@ -1,0 +1,368 @@
+{    "id": 1,
+        "name": "Hml Css Quiz",
+        "image": "https://codefactory.wien/wp-content/themes/hestia/cf-images/big-jpg/4-htmlcss.jpg",
+        "description": "JavaScript Quiz (Basic Multiple Choice Questions for JavaScript Developers)",
+        "questions": [
+            {
+                "id": 1010,
+                "name": "Quelle organisation définit les standards Web?",
+                "questionTypeId": 1,
+                "options": [
+
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "Apple Inc.",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "IBM Corporation",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "World Wide Web Consortium",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "Microsoft Corporation",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1011,
+                "name": "  HTML est considéré comme ______ ?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "Langage de programmation",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "Langage POO",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": " Langage de haut niveau",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "Langage de balisage",
+                        "isAnswer": true
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1012,
+                "name": "HTML utilise des ______?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "Balises définis par l’utilisateur",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "Balises prédéfinis",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "Balises fixes définis par le langage",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "Balises uniquement pour les liens",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1013,
+                "name": "HTML a été proposé pour la première fois l’année ___?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "1980",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "1990",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "1995",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "2000",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1014,
+                "name": " Lequel des éléments suivants n’est pas un exemple de navigateur?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "Mozilla Firefox",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "Netscape",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "Microsoft Bing",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "Opéra",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1015,
+                "name": "Qui est l’auteur principal du HTML?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "Brendan Eich",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "Tim Berners-Lee",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "Développeur web",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "Google Inc",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1016,
+                "name": "Si nous souhaitons définir le style d’un seule élément, quel sélecteur css utiliserons-nous?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "id",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "text",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "class",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "name",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1017,
+                "name": "La balise HTML qui spécifie un style CSS intégré dans un élément est appelée ____?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "Design",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "Style",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "Modify",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "Define",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1018,
+                "name": "La norme HTML qui n’exige pas des double quotes autour des valeurs d’un attribut est dite ______?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "HTML 1",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": "HTML 3",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": "HTML 5",
+                        "isAnswer": true
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "HTML 7",
+                        "isAnswer": false
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            },
+            {
+                "id": 1019,
+                "name": "Un type de document HTML plus strict est connu sous ______ ?",
+                "questionTypeId": 1,
+                "options": [
+                    {
+                        "id": 1055,
+                        "questionId": 1010,
+                        "name": "DHTML",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1056,
+                        "questionId": 1010,
+                        "name": " XHTML",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1057,
+                        "questionId": 1010,
+                        "name": " XML",
+                        "isAnswer": false
+                    },
+                    {
+                        "id": 1058,
+                        "questionId": 1010,
+                        "name": "HTML",
+                        "isAnswer": true
+                    }
+                ],
+                "questionType": {
+                    "id": 1,
+                    "name": "Multiple Choice",
+                    "isActive": true
+                }
+            }
+        ]
+    }

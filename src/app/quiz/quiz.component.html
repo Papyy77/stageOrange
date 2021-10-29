@@ -1,0 +1,147 @@
+<app-header (event)="getEvent($event)"></app-header>
+<section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-12" *ngIf="!quizSelected">
+  <div class="text-center pb-12">
+    <h1 class="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-900">
+      Selectionnez un quiz
+    </h1>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+    <div *ngFor="let quiz of quizes"
+      class="w-full bg-white rounded-lg sahdow-lg overflow-hidden flex flex-col md:flex-row">
+      <div class="w-full h-80" (click)="loadQuiz(quiz.id)">
+        <img  test class="object-center object-cover w-full h-full" [src]="quiz.image" alt="photo" >
+        
+      </div>
+    </div>
+  </div>
+</section>
+<div class="py-8" *ngIf="quizSelected">
+  <div id="quiz" class="container">
+    <div *ngIf="mode=='quiz' && quiz">
+      <div class="text-center pb-12">
+        <h1 class="font-bold text-3xl md:text-4xl lg:text-5xl font-heading text-gray-900">
+          {{quiz.name}}
+        </h1>
+      </div>
+      <div *ngFor="let question of filteredQuestions;">
+        <span
+          class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full">Question
+          {{pager.index + 1}} of {{pager.count}}.</span>
+        <div class="badge badge-info"></div>
+        <div *ngIf="config.duration"
+          class="inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full float-right">
+          Time: {{ellapsedTime}} / {{duration}}</div>
+        <h3 class="font-bold text-base md:text-lg lg:text-lg font-heading text-gray-900">{{pager.index + 1}}.
+          <span [innerHTML]="question.name"></span>
+        </h3>
+        <div class="grid grid-cols-2">
+          <ng-container *ngIf="question.type == 'multiple'">
+            <div class="" *ngFor="let option of question.options;let i=index">
+              <div class="option">
+                <nav class="navbar navbar-dark">
+                  <label class="font-weight-normal" [attr.for]="question.options[i].id">
+                  <input id="{{question.options[i].id}}" type="checkbox" name="{{question.name}}" [checked]="question.options[i].selected"
+                    (change)="onSelect(question, option, $event);"/> {{option.name}}
+                </label>
+              </nav>   
+              </div>
+            </div>
+          </ng-container>
+          <ng-container *ngIf="question.type == 'single'">
+            <div class="" *ngFor="let option of question.options;let i=index">
+              <div class="form-check">
+              <div class="option">
+                <nav class="navbar navbar-dark">
+                  <label class="font-weight-normal" [attr.for]="question.options[i].id" for="flexRadioDefault1">
+                  <input id="{{question.options[i].id}}" type="radio" name="{{question.name}}" [checked]="question.options[i].selected" 
+                    (change)="onSelect(question, option, $event);"/> {{option.name}}
+                </label>
+              </nav>   
+      </div>
+            </div>
+            </div>
+          </ng-container>
+        </div>       
+      </div>
+      <hr />
+    <div class="inline-flex mt-2 xs:mt-0 d-flex justify-content-center">
+      <button (click)="goTo(pager.index - 1);"
+          class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-l">
+          Precedent
+      </button>
+      <button (click)="goTo(pager.index + 1);"
+          class="text-sm bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-r">
+          Suivant
+      </button>
+    </div>
+    </div>
+
+    <div class="row text-center" *ngIf="mode=='review'">
+      <div class="col-4 cursor-pointer" *ngFor="let question of quiz.questions; let index = index;">
+        <div (click)="goTo(index)" class="p-3 mb-2 {{ isAnswered(question) == 'Repondue'? 'bg-info': 'bg-warning' }}">
+          {{index + 1}}. {{ isAnswered(question) }}</div>
+      </div>
+    </div>
+    <div class="result" *ngIf="mode=='result'">
+      <div class="min-w-screen min-h-screen bg-gray-100 flex items-center justify-center bg-gray-100 font-sans py-6">
+        <div class="container">
+          <div class="card bg-white py-3 px-5 rounded-xl flex flex-col mb-5">
+            <div class="title text-xl font-medium mb-3">Résultat du quiz</div>
+            <div class="w-full">
+              <div class="py-3 px-5 mb-4 bg-green-100 text-green-900 text-sm rounded-md border border-green-200"
+                role="alert" *ngIf="passed">
+                Bravo, votre score est {{sum}}%
+              </div>
+              <div class="py-3 px-5 mb-4 bg-red-100 text-red-900 text-sm rounded-md border border-red-200"
+                role="alert" *ngIf="!passed">
+                Vous pouvez faire mieux la prochaine fois. Votre score est {{sum}}%
+              </div>
+            </div>
+            <div *ngFor="let question of quiz.questions; let index = index">
+              <div class="result-question">
+                <h5>{{index + 1}}. {{question.name}}</h5>
+                <div class="row">
+                  <div class="col-6" *ngFor="let Option of question.options">
+                    <input id="{{Option.id}}" type="checkbox" disabled="disabled" [(ngModel)]="Option.selected" />
+                    {{Option.name}}
+                  </div>
+                </div>
+                <div class="p-1 m-2 alert {{ isCorrect(question) == 'correcte'? 'bg-green-100 text-green-900 border-green-200': 'bg-red-100 text-red-900 border-red-200'}}">Votre reponse est
+                  {{isCorrect(question)}}. {{isCorrect(question) == 'correcte'? '' : ' La bonne reponse est : '}}
+                  <ng-container *ngIf="isCorrect(question) == 'incorrecte'">
+                    <p *ngFor="let r of reponse(question)">
+                      * {{r.name}}
+                    </p>
+                  </ng-container>
+                </div>
+              </div>
+            </div>
+            <button class="bg-blue-300 hover:bg-blue-400 text-blue-800 font-bold py-2 px-4 rounded-l"
+            *ngIf="config.allowBack" (click)="init()">Paaser un autre quiz</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr />
+    <div *ngIf="mode!='result'">
+      <div class="inline-flex mt-2 xs:mt-0">
+        <button (click)="init()"
+            class="text-sm bg-red-300 hover:bg-red-400 text-red-800 font-semibold py-2 px-4 rounded-l">
+            Quitter
+        </button>
+        <button (click)="mode = 'quiz'"
+            class="text-sm bg-yellow-300 hover:bg-yellow-400 text-yellow-800 font-semibold py-2 px-4">
+            Retour au quiz 
+        </button>
+        <button (click)="mode = 'review'"
+            class="text-sm bg-purple-300 hover:bg-purple-400 text-purple-800 font-semibold py-2 px-4">
+            Recap
+        </button>
+        <button (click)="onSubmit();"
+            class="text-sm bg-blue-300 hover:bg-blue-400 text-blue-800 font-semibold py-2 px-4 rounded-r">
+            Envoyez
+        </button>
+    </div>
+    </div>
+  </div>
+</div>
